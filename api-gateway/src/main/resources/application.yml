@@ -1,0 +1,24 @@
+server:
+  port: 8002
+  
+zuul:
+    routes:
+     Airport-Service:
+      url: http://localhost:1111
+     Birport-Service:
+      url: http://localhost:2222
+     
+     Flight-Service:
+      url: http://localhost:3333
+     Passenger-Service:
+       url: http://localhost:4444
+  
+       
+management:
+    endpoints:
+      web:
+       exposure:
+         include: '*'
+    endpoint:
+       health:
+         show-details: ALWAYS
